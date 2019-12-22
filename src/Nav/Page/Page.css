@@ -1,0 +1,73 @@
+.Page {
+
+}
+
+.Page ol {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	overflow: hide;
+	padding: 0;
+	margin: 0;
+}
+
+.Page ol li {
+	list-style-type: none;
+	display: inline-block;
+}
+
+.PageLink {
+	height: 2em;
+	width: 2em;
+	padding: auto;
+	text-align: center;
+	vertical-align: center;
+	font-size: 1.2em;
+	line-height: 1.8em;
+}
+
+.Page li {
+	z-index: -5;
+	opacity: 0;
+}
+
+.Page li.previous,
+.Page li.current,
+.Page li.next,
+.Page.active .Page li {
+	z-index: 2;
+	opacity: 1;
+}
+
+.PageSlot {
+	border: 1px solid #eee;
+	height: 2em;
+	width: 2em;
+	margin: -1px 0;
+}
+
+.PageSlot.superfluous {
+	visibility: hidden;
+}
+
+.PageSlot:not(:first-child) {
+	margin-left: -1px;
+}
+
+.PageSlot:nth-child(3) {
+	border-bottom: 1px solid white;
+}
+
+.PageSlot a {
+	padding: auto	;
+}
+
+.PageSlot:first-child {
+	transform: rotate(200grad);
+	line-height: 2em;
+}
+
+.PageSlot:last-child {
+	line-height: 1.6em;
+}

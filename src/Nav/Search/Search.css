@@ -1,0 +1,47 @@
+.Search input {
+	border: none;
+	height: 2em;
+	width: calc(100% - 2em);
+	font-size: 1.2em;
+	line-height: 1.8em;
+	padding-left: 0.4em;
+	transition: background-color 400ms ease;
+	color: black;
+}
+
+.Search input:focus,
+.Search input:hover {
+	background-color: #eee;
+}
+
+.Search input::-webkit-input-placeholder,
+.Search input:-ms-input-placeholder,
+.Search input::placeholder {
+	color: #aaa;
+}
+
+.Search button {
+	background-color: white;
+	border: none;
+	float: right;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	transition: background-color 400ms ease;
+}
+
+.Search button:focus,
+.Search button:hover {
+	background-color: #eee;
+}
+
+.Search button img {
+	padding: 0;
+	padding-top: 0.1em;
+	margin: 0;
+	margin-bottom: -0.1em;
+	height: 2.6em;
+	width: 2.6em;
+	background-color: white;
+	opacity: 0.75;
+}

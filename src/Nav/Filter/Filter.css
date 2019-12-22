@@ -1,0 +1,153 @@
+.Filter,
+.Sorter {
+	position: relative;
+	flex: 1;
+	z-index: 3;
+}
+
+.Filter > summary,
+.Sorter > summary {
+	text-align: center;
+	list-style-type: none;
+	font-size: 1.2em;
+	line-height: 2em;
+	height: 2em;
+	text-transform: uppercase;
+	cursor: pointer;
+	text-decoration-color: rgba(51,51,51,0);
+	transition: background-color 400ms ease, text-decoration 400ms linear;
+	z-index: 10;
+}
+
+.Filter > summary::-webkit-details-marker,
+.Sorter > summary::-webkit-details-marker {
+  display: none;
+}
+
+.Filter > summary img {
+	height: 0.8em;
+	margin: 0;
+	margin-right: 0.3em;
+	padding: 0;
+}
+
+.Filter[open] > summary,
+.Sorter[open] > summary {
+	background-color: #f7f7f7;
+}
+
+.Filter > summary:hover,
+.Sorter > summary:hover,
+.Filter > summary:focus,
+.Sorter > summary:focus {
+	text-decoration: underline;
+	text-decoration-thickness: 0.02em;
+	text-decoration-color: rgba(51,51,51,0.8);
+	text-underline-offset: 0.1em;
+	background-color: #eee;
+}
+
+.Filter form,
+.Sorter ul {
+	transition: opacity 300ms ease, transform 300ms ease;
+	position: absolute;
+	opacity: 0;
+	top: 100%;
+	right: -1px;
+	background-color: white;
+	border: 1px solid #eee;
+	border-top: 1px solid white;
+	padding: 0;
+	margin: 0;
+	z-index: 3;
+	list-style-type: none;
+	transform: scaleY(0);
+	transform-origin: 0 0;
+}
+
+.Filter form {
+	min-width: 100%;
+	width: auto;
+}
+
+.Sorter ul {
+	width: 100%;
+	min-width: 12.2em;
+}
+
+.Filter[open] form,
+.Sorter[open] ul {
+	transform: none;
+	opacity: 1;
+	bottom: auto;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.Filter form {
+}
+
+.Filter fieldset {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.Filter fieldset > * {
+	flex: 1 1 auto;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.Filter fieldset legend {
+	float: left;
+	height: 100%;
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #333;
+	text-transform: uppercase;
+	padding: 0.4em 0;
+}
+
+.Filter fieldset:first-of-type legend {
+	padding-top: 0.8em;
+}
+
+.Filter fieldset:last-of-type legend {
+	padding-bottom: 0.8em;
+}
+
+.Filter fieldset legend::before {
+	content: "≤";
+	padding: 1em;
+}
+
+.Filter fieldset legend::after {
+	content: "≤";
+	padding: 1em;
+}
+
+.Filter input {
+	display: block;
+	border: 0;
+	font-family: sans-serif;
+	font-size: 1.2em;
+	font-weight: 100;
+	color: black;
+	width: 100%;
+}
+
+.Filter input::-webkit-input-placeholder,
+.Filter input:-ms-input-placeholder,
+.Filter input::placeholder {
+	color: #aaa;
+}
+
+.Filter label {
+	display: block;
+	font-size: 0.8em;
+	text-transform: uppercase;
+}

@@ -1,0 +1,161 @@
+.videocard {
+	display: inline-block;
+	margin: 1em;
+	flex: 0 0 322px;
+	height: 300px;
+	position: relative;
+}
+
+.videolink {
+	--cardpick: 400ms;
+	height: 320px;
+	max-height: 300px;
+	transition: max-height var(--cardpick) ease, transform var(--cardpick) ease;
+	/* , z-index var(--cardpick) cubic-bezier(1,0,1,0); */
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-color: white;	
+	border: 1px solid #eee;
+	padding: 0.5em;
+	transform-origin: 50% 0;
+}
+
+.videolink:hover {
+	transition: max-height var(--cardpick) ease, transform var(--cardpick) ease;
+	/* , z-index var(--cardpick) cubic-bezier(0,1,0,1); */
+	min-height: 320px;
+	max-height: 400px;
+	height: auto;
+	z-index: 2;
+	transform: scale(1.1);
+}
+
+.videocard a {
+	width: 320px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-decoration: none;
+}
+
+.videocard img {
+	height: 180px;
+	width: 320px;
+	object-fit: cover;
+	object-position: 50% 50%;
+}
+
+.videocard h1 {
+	color: #222;
+	font-size: 1em;
+	position: relative;
+  max-height: 2.3em;
+	overflow: hidden;
+	transition: max-height var(--cardpick);
+}
+.videocard:hover h1 {
+	text-decoration: underline;
+	text-decoration-thickness: 0.02em;
+	text-decoration-color: #333;
+	text-underline-offset: 0.1em;
+	max-height: none;
+}
+
+.videocard h1::before {
+	position: absolute;
+  content: "…";
+  inset-block-end: 0; /* "bottom" */
+	inset-inline-end: 0; /* "right" */
+	width: 30%;
+  height: 1.2em;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
+	text-align: right;
+}
+
+.videocard h1::after {
+	content: "";
+  position: absolute;
+  inset-inline-end: 0; /* "right" */
+  width: 1rem;
+  height: 1rem;
+  background: white;
+}
+
+.videocard:hover h1::before {
+	display: none;
+}
+
+.videocard:hover h1::after {
+	display: none;
+}
+
+.videocard .video-description {
+	font-size: 0.9em;
+	position: relative;
+  max-height: 3.4em;
+	overflow: hidden;
+	transition: max-height var(--cardpick);
+	color: #222;
+}
+
+.videocard:hover .video-description {
+	max-height: none;
+	padding-bottom: 0.5em;
+}
+
+.videocard .video-description::before {
+  position: absolute;
+  content: "…";
+  inset-block-end: 0; /* "bottom" */
+	inset-inline-end: 0; /* "right" */
+	width: 30%;
+  height: 1.2em;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
+	text-align: right;
+}
+
+.videocard .video-description::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0; /* "right" */
+  width: 1rem;
+  height: 1rem;
+  background: white;
+}
+
+.videocard:hover .video-description::before {
+	display: none;
+}
+
+.videocard:hover .video-description::after {
+	display: none;
+}
+
+.videocard .video-duration {
+	display: block;
+	color: #eee;
+	background-color: #222;
+	border-radius: 0.3em;
+	float: left;
+	font-size: 0.8em;
+	padding: 0.3em;
+	margin: 0;
+	line-height: 0.8em;
+	position: absolute;
+	bottom: 0.6em;
+	left: 0.6em;
+}
+
+.videocard .video-date {
+	font-size: 0.8em;
+	float: right;
+	margin: 0;
+	font-weight: bold;
+	color: #333;
+	position: absolute;
+	bottom: 0.6em;
+	right: 0.6em;
+}
